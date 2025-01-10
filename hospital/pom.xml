@@ -16,6 +16,8 @@
 		<module>Service</module>
 		<module>Web</module>
 		<module>Config</module>
+		<module>Kafka-producer</module>
+		<module>Kafka-consumer</module>
 	</modules>
 	<groupId>com.system</groupId>
 	<artifactId>hospital</artifactId>
@@ -39,7 +41,10 @@
 		<java.version>23</java.version>
 	</properties>
 	<dependencies>
-	
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

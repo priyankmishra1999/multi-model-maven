@@ -6,12 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Service" />
         <module name="Repository" />
         <module name="Email" />
-        <module name="Domain" />
         <module name="Web" />
         <module name="Config" />
+        <module name="Service" />
+        <module name="Domain" />
+        <module name="Kafka-producer" />
+        <module name="Kafka-consumer" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +22,8 @@
       <module name="Config" options="-parameters" />
       <module name="Domain" options="-parameters" />
       <module name="Email" options="-parameters" />
+      <module name="Kafka-consumer" options="-parameters" />
+      <module name="Kafka-producer" options="-parameters" />
       <module name="Repository" options="-parameters" />
       <module name="Service" options="-parameters" />
       <module name="Web" options="-parameters" />

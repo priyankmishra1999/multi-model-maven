@@ -8,7 +8,7 @@ import java.util.Objects;
 
 /**
  * The class Response.
- * @author Priyank
+ * @author Priyank Mishra
  * @param <T> The type of the response payload
  */
 public final class Response<T> {

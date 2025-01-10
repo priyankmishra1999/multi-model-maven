@@ -8,4 +8,6 @@ public interface DoctorService {
     Response<Object> addDoctor(Doctor doctor);
 
     Doctor getDoctor(Long id);
+
+
 }

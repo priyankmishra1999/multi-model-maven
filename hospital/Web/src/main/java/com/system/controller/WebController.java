@@ -1,5 +1,6 @@
 package com.system.controller;
 
+import com.system.customAnnotations.LogExecutionTime;
 import com.system.model.Doctor;
 import com.system.responseModel.Response;
 import com.system.service.DoctorService;
@@ -7,8 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+@RestController(value = "DoctorController")
 public class WebController {
+
     private final DoctorService doctorService;
 
     public WebController(DoctorService doctorService) {
@@ -16,6 +18,7 @@ public class WebController {
     }
 
     @PostMapping("/addDoctor")
+    @LogExecutionTime(name = "add", value = "add")
     public Response<Object> addDoctor(Doctor doctor) {
         return doctorService.addDoctor(doctor);
     }
