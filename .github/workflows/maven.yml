@@ -35,6 +35,6 @@ jobs:
           REPOSITORY: spring/multi-module
           IMAGE_TAG: latest
         run: |
-          docker docker-compose build spring/multi-module -f ./hospital
+          docker docker-compose build spring/multi-module ./hospital
           docker tag spring/multi-module:latest 654654608593.dkr.ecr.ap-south-1.amazonaws.com/spring/multi-module:latest
           docker push 654654608593.dkr.ecr.ap-south-1.amazonaws.com/spring/multi-module:latest
