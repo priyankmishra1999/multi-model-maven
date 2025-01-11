@@ -1,14 +1,14 @@
-version: '3.5'
-services:
-  hospital_s:
-    # ports:
-    # - '0.0.0.0:7024:7024'
-    network_mode: "host"
-    container_name: hospital_c
-    build: ./Web
-    restart: always
-
-networks:
-  host:
-    name: host
-    external: true
+#version: '3.5'
+#services:
+#  hospital_s:
+#    # ports:
+#    # - '0.0.0.0:7024:7024'
+#    network_mode: "host"
+#    container_name: multi-module
+#    build: ./Web
+#    restart: always
+#
+#networks:
+#  host:
+#    name: host
+#    external: true
