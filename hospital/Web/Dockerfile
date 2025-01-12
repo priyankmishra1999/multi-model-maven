@@ -1,28 +1,26 @@
-#FROM openjdk:23
-#
-#WORKDIR /app
-#
-## Copy the executable JAR from the Web module
-#COPY target/Web-0.0.1-SNAPSHOT.jar app.jar
-#
-#EXPOSE 8080
-#
-#ENTRYPOINT ["java", "-jar", "app.jar"]
-FROM openjdk:23
+# Use Maven image to build the project
+FROM maven:3.9.9-eclipse-temurin-23 as builder
 
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy the project source code into the container
-COPY . /app
+# Copy the entire project into the container
+COPY . .
 
-# Run Maven to build the project, skipping tests
-RUN mvn clean install -U -DskipTests
+# Build the project using Maven
+RUN mvn clean install -DskipTests
 
-# Copy the built JAR from the Web module to the app directory
-COPY target/Web-0.0.1-SNAPSHOT.jar app.jar
+# Use a lightweight Java image for running the application
+FROM eclipse-temurin:23-jre-alpine
 
-# Expose the application port
+# Set working directory inside the container
+WORKDIR /app
+
+# Copy the built jar file from the builder stage
+COPY --from=builder /app/Web/target/*.jar app.jar
+
+# Expose the port the application listens on (adjust according to your app)
 EXPOSE 8080
 
-# Run the application
+# Define the entry point to run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
