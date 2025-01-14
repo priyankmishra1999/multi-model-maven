@@ -3,6 +3,7 @@ package com.system.serviceImpl;
 import com.system.kafkaproducer.ProducerService;
 import com.system.dao.DoctorRepository;
 import com.system.model.Doctor;
+//import com.system.responseModel.KafkaModel;
 import com.system.responseModel.Response;
 import com.system.service.DoctorService;
 import org.slf4j.Logger;
@@ -30,7 +31,7 @@ public class DoctorServiceImpl implements DoctorService {
         doctor1.setName(doctor.getName());
         doctor1.setSpecialist(doctor.getSpecialist());
         doctorRepository.save(doctor1);
-        producerService.sendDataToKafka("learning-kafka", doctor1.toString());
+        producerService.sendDataToKafka("learning-kafka", doctor1);
         return Response.of(200, "Saved", doctor1);
     }
 

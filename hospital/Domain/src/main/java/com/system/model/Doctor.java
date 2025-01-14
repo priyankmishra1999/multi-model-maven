@@ -1,12 +1,13 @@
 package com.system.model;
 
+
+
 import jakarta.persistence.*;
 
-import java.io.Serializable;
 
 @Entity
 @Table
-public class Doctor implements Serializable {
+public class Doctor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

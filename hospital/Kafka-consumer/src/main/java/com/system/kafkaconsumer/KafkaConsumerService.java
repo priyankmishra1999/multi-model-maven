@@ -1,6 +1,7 @@
 package com.system.kafkaconsumer;
 
 
+import com.system.model.Doctor;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.slf4j.Logger;
@@ -17,9 +18,8 @@ public class KafkaConsumerService {
 
     @KafkaListener(topics = "learning-kafka", groupId = "kafka-grp")
     @Async("AsyncExecutor")
-    public void consume1(String message) {
-
-        log.info("Message for consumer1 is :- {}", message);
+    public void consume1(Doctor message) {
+        log.info("Message for consumer1 is :- {}", message.toString());
     }
 
 }

@@ -1,5 +1,5 @@
 # Use Maven image to build the project
-FROM maven:3.9.9-eclipse-temurin-23 as builder
+FROM maven:3.9.9-eclipse-temurin-23 AS builder
 
 # Set working directory inside the container
 WORKDIR /app

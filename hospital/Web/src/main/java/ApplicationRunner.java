@@ -10,6 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {"com.system.*"})
 @EnableJpaRepositories(basePackages = {"com.system.*"})
 @EnableCaching
+
 public class ApplicationRunner {
     public static void main(String[] args) {
         SpringApplication.run(ApplicationRunner.class);

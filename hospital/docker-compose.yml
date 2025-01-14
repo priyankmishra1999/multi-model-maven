@@ -5,7 +5,7 @@ services:
     # - '0.0.0.0:7024:7024'
     network_mode: "host"
     container_name: multi-module
-    build: ./Web
+    build: Web
     restart: always
 
 networks:
